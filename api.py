@@ -1,6 +1,7 @@
 import requests
+from config import SERVER_URL
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = SERVER_URL
 
 
 def fetch_patient(fingerprint_id: str):
@@ -29,4 +30,3 @@ def fetch_patient(fingerprint_id: str):
     except Exception as exc:  # broad, but CLI needs robust error surfacing
         print("❌ API connection failed:", exc)
         return None
-
